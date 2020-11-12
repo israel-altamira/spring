@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<!-- FOLLOWING SAMPLES FROM THIS PAGE -->
+	<!-- https://www.baeldung.com/log4j2-appenders-layouts-filters -->
+
+	<!-- In this sample we found : -->
+	<!-- 1) Patterlayout, what does this mean: -->
+	<!-- %d [%t] %-5level %logger{36} - %msg%n%throwable -->
+	<!-- 2) what happen if ROOT logger does not have an AppenderRef? -->
+	<!-- .. where the message are logged? -->
+
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="ERROR">
+			<AppenderRef ref="ConsoleAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
