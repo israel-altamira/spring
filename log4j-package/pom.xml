@@ -4,7 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.anothercompany.sample</groupId>
 	<artifactId>log4j-package</artifactId>
-	<packaging>jar</packaging>
+	<!-- Since 'jar' is the default packaging type it is not required to set 
+		it in this case -->
+	<!-- <packaging>jar</packaging> -->
 	<version>1.0-SNAPSHOT</version>
 	<name>log4j-package from another company</name>
 	<url>http://maven.apache.org</url>
