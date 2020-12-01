@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-
-	<!-- FOLLOWING SAMPLES FROM THIS PAGE -->
-	<!-- https://www.baeldung.com/log4j2-appenders-layouts-filters -->
-
-	<!-- In this sample we found : -->
-	<!-- 1) Patterlayout, what does this mean: -->
-	<!-- %d [%t] %-5level %logger{36} - %msg%n%throwable -->
-	<!-- 2) what happen if ROOT logger does not have an AppenderRef? -->
-	<!-- .. where the message are logged? -->
-
+	<!-- ejercicio 4 -->
 	<Appenders>
 		<Console name="ConsoleAppender" target="SYSTEM_OUT">
 			<PatternLayout
-				pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable" />
+				pattern="[%logger{36}] %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green} %message%n" />
+				<!-- %style{%date{DEFAULT}}{yellow}  -->
 		</Console>
+		<File name="JSONLogfileAppender" fileName="src/main/resources/logfile.json">
+			<JSONLayout compact="true" eventEol="true" />
+			<BurstFilter level="INFO" rate="2" maxBurst="10" />
+		</File>
+		<Async name="AsyncAppender" bufferSize="80">
+			<AppenderRef ref="JSONLogfileAppender" />
+		</Async>
 	</Appenders>
+
 	<Loggers>
-		<Root level="ERROR">
+		<!-- next 2 loggers:  the last one it the one working ok -->
+		<Logger name="org.hotwater.com" level="INFO" additivity="false">
+			<AppenderRef ref="AsyncAppender" />
+		</Logger>
+		<Logger name="org.hotwater.com" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+		</Logger>
+		<Root level="INFO">
 			<AppenderRef ref="ConsoleAppender" />
 		</Root>
 	</Loggers>
+
 </Configuration>
