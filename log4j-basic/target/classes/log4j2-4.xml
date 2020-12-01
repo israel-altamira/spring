@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<!-- ejercicio 4 -->
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%logger{36}] %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green} %message%n" />
+				<!-- %style{%date{DEFAULT}}{yellow}  -->
+		</Console>
+		<File name="JSONLogfileAppender" fileName="src/main/resources/logfile.json">
+			<JSONLayout compact="true" eventEol="true" />
+			<BurstFilter level="INFO" rate="2" maxBurst="10" />
+		</File>
+		<Async name="AsyncAppender" bufferSize="80">
+			<AppenderRef ref="JSONLogfileAppender" />
+		</Async>
+	</Appenders>
+
+	<Loggers>
+		<!-- next 2 loggers:  the last one it the one working ok -->
+		<Logger name="org.hotwater.com" level="INFO" additivity="false">
+			<AppenderRef ref="AsyncAppender" />
+		</Logger>
+		<Logger name="org.hotwater.com" level="INFO" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="ConsoleAppender" />
+		</Root>
+	</Loggers>
+
+</Configuration>
