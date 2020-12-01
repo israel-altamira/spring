@@ -17,7 +17,6 @@
 	</Appenders>
 
 	<Loggers>
-		<!-- next 2 loggers:  the last one it the one working ok -->
 		<Logger name="org.hotwater.com" level="INFO" additivity="false">
 			<AppenderRef ref="AsyncAppender" />
 		</Logger>
