@@ -22,7 +22,7 @@ public class Application {
 	// compilation time
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
-		Logger logger = LogManager.getLogger();
+		Logger logger = LogManager.getLogger("org.metallica.com");
 		logger.info("This is a father message.");
 
 		MainApplication app = new MainApplication();
