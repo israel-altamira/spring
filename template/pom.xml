@@ -31,11 +31,27 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- -->
+		<!-- SPRING -->
+		<!-- https://mvnrepository.com/artifact/org.springframework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.2.18.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.18.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.2.18.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>log4j-config</finalName>
+		<finalName>template</finalName>
 	</build>
 
 </project>
