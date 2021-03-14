@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<!-- https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html -->
+
+	<bean name="properties"
+		class="com.template.demo.model.SequenceGeneratorBasic">
+		<property name="prefix">
+			<value>30</value>
+		</property>
+		<property name="suffix">
+			<value>A</value>
+		</property>
+		<property name="initial">
+			<value>100000</value>
+		</property>
+	</bean>
+
+	<bean name="constructor"
+		class="com.template.demo.model.SequenceGeneratorBasic">
+		<constructor-arg>
+			<value>30</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>A</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>100000</value>
+		</constructor-arg>
+	</bean>
+
+	<bean name="properties-shortcut"
+		class="com.template.demo.model.SequenceGeneratorBasic">
+		<property name="prefix" value="30" />
+		<property name="suffix" value="A" />
+		<property name="initial" value="1000000" />
+	</bean>
+
+	<bean name="constructor-shortcut"
+		class="com.template.demo.model.SequenceGeneratorBasic">
+		<constructor-arg value="30" />
+		<constructor-arg value="A" />
+		<constructor-arg value="1000000" />
+	</bean>
+
+	<!-- -->
+	<!-- -->
+	<!-- -->
+
+	<bean name="byList"
+		class="com.template.demo.model.ValueGeneratorByList">
+		<property name="value">
+			<list>
+				<value>L1</value>
+				<value>L2</value>
+				<value>L3</value>
+				<null />
+			</list>
+		</property>
+	</bean>
+	<bean name="byArray"
+		class="com.template.demo.model.ValueGeneratorByArray">
+		<property name="value">
+			<list>
+				<value>A1</value>
+				<value>A2</value>
+				<value>A3</value>
+				<null />
+			</list>
+		</property>
+	</bean>
+	<bean name="bySet"
+		class="com.template.demo.model.ValueGeneratorBySet">
+		<property name="value">
+			<set>
+				<value>set</value>
+				<null />
+			</set>
+		</property>
+	</bean>
+
+	<bean name="byMap"
+		class="com.template.demo.model.ValueGeneratorByMap">
+		<property name="value">
+			<map>
+				<entry>
+					<key>
+						<value>m1</value>
+					</key>
+					<value>m1</value>
+				</entry>
+				<entry>
+					<key>
+						<value>m2</value>
+					</key>
+					<bean class="java.net.URL">
+						<constructor-arg value="http" />
+						<constructor-arg value="m" />
+						<constructor-arg value="2" />
+					</bean>
+				</entry>
+				<entry key="m3" value="m3" />
+				<entry key="m4">
+					<bean class="java.net.URL">
+						<constructor-arg value="http" />
+						<constructor-arg value="m" />
+						<constructor-arg value="4" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+		<property name="nullable">
+			<map>
+				<entry>
+					<key>
+						<null />
+					</key>
+					<value>a</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean name="byProperties"
+		class="com.template.demo.model.ValueGeneratorByProperties">
+		<property name="value">
+			<props>
+				<prop key="PK1">PV</prop>
+				<prop key="PK2">PK2</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="sequenceGenerator"
+		class="com.template.demo.model.SequenceGenerator">
+		<property name="prefix" ref="byList" />
+		<property name="suffix" ref="byArray" />
+		<property name="valueA" ref="bySet" />
+		<property name="valueB" ref="byMap" />
+		<property name="valueC" ref="byProperties" />
+		<property name="initial" value="1000000" />
+	</bean>
+
+</beans>

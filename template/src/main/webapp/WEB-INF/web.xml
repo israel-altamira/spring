@@ -6,6 +6,6 @@
 
 	<display-name>Archetype Created Web Application</display-name>
 	
-	<div>Access this page as localhost:port/"webappname"/index.jsp directly</div>
+	<!--  Access this page as localhost:port/"webappname"/index.jsp directly -->
 
 </web-app>
