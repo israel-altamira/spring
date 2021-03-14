@@ -54,6 +54,12 @@
 		<!-- my-faces 2.3.18 >> deprectaed @ManagedBeans -->
 		<!-- my-faces 3.0.0 >> java.lang.ClassNotFoundException: org.apache.myfaces.webapp.StartupServletContextListener -->
 		<!-- my-faces 3.0.0 >> java.lang.ClassNotFoundException: javax.faces.webapp.FacesServlet -->
+		<!--
+			https://www.baeldung.com/maven-eclipse-jdk-configuration
+			https://stackoverflow.com/questions/30128395/identifying-and-solving-javax-el-propertynotfoundexception-target-unreachable 
+			https://mkyong.com/jsf2/jsf-2-0-hello-world-example/ >> note of org.apache.myfaces.annotation.SCAN_PACKAGES
+			https://stackoverflow.com/questions/21673480/maven-jsf-2-0-doesnt-work-on-embedded-tomcat  
+		-->
 		<dependency>
 		    <groupId>org.apache.myfaces.core</groupId>
 		    <artifactId>myfaces-api</artifactId>
