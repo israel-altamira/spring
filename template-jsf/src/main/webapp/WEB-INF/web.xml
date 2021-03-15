@@ -25,7 +25,12 @@
 	<listener>
 		<listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
 	</listener>
-		
+	
+	<!-- Welcome page -->
+	<welcome-file-list>
+		<welcome-file>faces/hello.xhtml</welcome-file>
+	</welcome-file-list>
+	
 	<!-- JSF mapping -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
@@ -54,8 +59,4 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping -->
 
-	<!-- Welcome page -->
-	<welcome-file-list>
-		<welcome-file>faces/hello.xhtml</welcome-file>
-	</welcome-file-list>
 </web-app>

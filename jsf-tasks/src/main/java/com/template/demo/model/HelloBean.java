@@ -6,11 +6,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 /**
- * 	my-faces 2.3.18 >> java.lang.NoClassDefFoundError: javax/websocket/DeploymentException 
-	my-faces 2.3.18 >> deprecated @ManagedBeans 
- 	my-faces 3.0.0 >> java.lang.ClassNotFoundException: org.apache.myfaces.webapp.StartupServletContextListener 
-	my-faces 3.0.0 >> java.lang.ClassNotFoundException: javax.faces.webapp.FacesServlet
- * 
  * @author israel altamira
  *
  */

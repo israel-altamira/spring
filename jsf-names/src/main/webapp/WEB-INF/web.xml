@@ -22,6 +22,11 @@
 	    <param-value>com.template.demo.model</param-value>
     </context-param>
 
+	<!-- Welcome page -->
+	<welcome-file-list>
+		<welcome-file>faces/hello.xhtml</welcome-file>
+	</welcome-file-list>
+
 	<listener>
 		<listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
 	</listener>
@@ -53,9 +58,5 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping -->
-
-	<!-- Welcome page -->
-	<welcome-file-list>
-		<welcome-file>faces/hello.xhtml</welcome-file>
-	</welcome-file-list>
+	
 </web-app>
